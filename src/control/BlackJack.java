@@ -30,7 +30,7 @@ public class BlackJack {
                                 + GameUtilities.checkSum(players.get(i))+ ")");
         }
         
-        System.out.println("Croupier :" + croupier + " (" 
+        System.out.println("Croupier: " + croupier + " (" 
                                 + GameUtilities.checkSum(croupier)+ ")");
         
         winners = GameUtilities.getWinners(players.get(0), players.get(1), 
