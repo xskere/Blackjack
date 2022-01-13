@@ -79,15 +79,15 @@ public class GameUtilities {
                 
         
         if(!croupierBlackJack){
-            if(isBlackJack(player1)) winners.add("Player 1 (Black Jack)");
-            if(isBlackJack(player2)) winners.add("Player 2 (Black Jack)");
-            if(isBlackJack(player3)) winners.add("Player 3 (Black Jack)");
+            if(isBlackJack(player1)) winners.add("Player 1 (Black Jack) wins.");
+            if(isBlackJack(player2)) winners.add("Player 2 (Black Jack) wins.");
+            if(isBlackJack(player3)) winners.add("Player 3 (Black Jack) wins.");
             
-            if(sumPlayer1 <= 21 && sumCroupier > 21 && !isBlackJack(player1)) winners.add("Player 1");
-            if(sumPlayer2 <= 21 && sumCroupier > 21 && !isBlackJack(player2)) winners.add("Player 2");
-            if(sumPlayer3 <= 21 && sumCroupier > 21 && !isBlackJack(player3)) winners.add("Player 3");
+            if(sumPlayer1 <= 21 && (sumCroupier > 21 || sumCroupier < sumPlayer1) && !isBlackJack(player1)) winners.add("Player 1 wins.");
+            if(sumPlayer2 <= 21 && (sumCroupier > 21 || sumCroupier < sumPlayer2) && !isBlackJack(player2)) winners.add("Player 2 wins.");
+            if(sumPlayer3 <= 21 && (sumCroupier > 21 || sumCroupier < sumPlayer3) && !isBlackJack(player3)) winners.add("Player 3 wins.");
         } 
-            if(winners.isEmpty()) winners.add("House ");
+            if(winners.isEmpty()) winners.add("House wins.");
             return winners;
     }
 
